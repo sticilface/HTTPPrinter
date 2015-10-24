@@ -61,7 +61,6 @@ public:
   void BeginPage(WiFiClient & c, fs::FS& fs, const char* path, uint8_t items);
   void SendPage();
   bool AddVariable(uint8_t n, const char * field, const char * text); 
-  void EndPage(); 
 
   void End();
   void Setsize(size_t s);                                                                                                                                                                                                                                          
@@ -77,6 +76,7 @@ public:
 private:
   virtual size_t write(uint8_t);  
   void Send_Header (int code, const char * content ); 
+  void EndPage(); 
 
   struct HTTP_Vars_t { 
     //char * field[32];

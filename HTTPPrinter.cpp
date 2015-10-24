@@ -241,6 +241,9 @@ void HTTPPrinter::SendPage() {
      Serial.printf(" %u variables inserted (%ums)\n", count, millis()-_time);
 
   }
+
+    EndPage(); 
+
 }
 
 void HTTPPrinter::EndPage() {

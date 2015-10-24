@@ -195,6 +195,7 @@ void OTA_handle(){
 
 
 //format bytes
+// Thanks to me-no-dev
 String formatBytes(size_t bytes){
   if (bytes < 1024){
     return String(bytes)+"B";
@@ -281,7 +282,6 @@ printer.BeginPage(c, SPIFFS, "/aboutdevice.htm", 30);  // create the page, and s
 
 
   printer.SendPage();
-  printer.EndPage(); 
 
   Serial.printf("Sent page %ums, heap = %u B\n", millis() - _time, ESP.getFreeHeap());
 
