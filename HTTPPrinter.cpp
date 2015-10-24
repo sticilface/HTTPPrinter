@@ -134,9 +134,6 @@ size_t HTTPPrinter::Send(WiFiClient client, int code, const char* content, print
 
           uint8_t *headerBuff = (uint8_t*)malloc(128);
           sprintf((char*)headerBuff, "HTTP/1.1 %u OK\r\nContent-Type: %s\r\nContent-Length: %u\r\nConnection: close\r\nAccess-Control-Allow-Origin: *\r\n\r\n", code, content,_size);
-          //Serial.println("Header");
-          //Serial.println((char*)headerBuff);
-
           size_t headerLen = strlen((const char*)headerBuff);
           _client.write((const uint8_t*)headerBuff, headerLen);
           free(headerBuff);

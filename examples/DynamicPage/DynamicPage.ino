@@ -19,6 +19,9 @@ Sticilface.
 
 const char * version =  "WS2812-OTA";
 const char * host = "HTTPPrinter";
+
+const char * ssid = "ssid";
+const char * pass = "pass";
 const char compile_date[] = __DATE__ " " __TIME__;
 const uint16_t aport = 8266;
 
@@ -56,7 +59,10 @@ void setup() {
   }
 
       uint8_t i = 0;
-      
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin ( ssid, pass );
+
   while (WiFi.status() != WL_CONNECTED ) {
         delay(500);
         i++;
