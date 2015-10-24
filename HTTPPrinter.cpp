@@ -154,7 +154,7 @@ void HTTPPrinter::SendPage() {
 
     if (!F) { 
       Serial.println(F("File open error ")); 
-      return; 
+      
     } else {
 
       F.setTimeout(0); // kills the 1 second time out.  not needed with SPIFFS file.. might need to be 1... 
